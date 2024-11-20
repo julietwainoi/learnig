@@ -14,4 +14,4 @@ jobs:
         with:
           registry: <116981799810>.dkr.ecr.<us-east-1>.amazonaws.com
           username: AKIARWPFITOBNXY2EJHL
-          password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          password: ${{ secrets.JULIETWANJIKU1 }}
