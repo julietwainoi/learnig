@@ -12,6 +12,6 @@ jobs:
         name: Login to ECR
         uses: docker/login-action@v3
         with:
-          registry: <116981799810>.dkr.ecr.<us-east-1>.amazonaws.com
+          registry: 116981799810.dkr.ecr.us-east-1.amazonaws.com
           username: AKIARWPFITOBNXY2EJHL
           password: ${{ secrets.JULIETWANJIKU1 }}
