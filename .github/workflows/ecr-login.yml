@@ -26,12 +26,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Step 4: Build the Docker image from the Dockerfile in the root directory
+      # Step 4: Build the Docker image
       - name: Build the Docker image
         run: |
-          docker build -t 116981799810.dkr.ecr.us-east-1.amazonaws.com/userepo:latest .
+          docker build -t public.ecr.aws/k1o2c9m2/userepo:latest .
 
-      # Step 5: Push the Docker image to ECR
+      # Step 5: Push the Docker image to ECR (public)
       - name: Push the Docker image to ECR
         run: |
-          docker push 116981799810.dkr.ecr.us-east-1.amazonaws.com/userepo:latest
+          docker push public.ecr.aws/k1o2c9m2/userepo:latest
