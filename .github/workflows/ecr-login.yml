@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  login:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       -
@@ -15,3 +15,16 @@ jobs:
           registry: 116981799810.dkr.ecr.us-east-1.amazonaws.com
           username: AKIARWPFITOBNXY2EJHL
           password: ${{ secrets.JULIETWANJIKU1 }}
+       # Step 3: Set up Docker Buildx (optional but recommended for advanced builds)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Step 4: Build the Docker image
+      - name: Build the Docker image
+        run: |
+          docker build -t 116981799810.dkr.ecr.us-east-1.amazonaws.com/userepo:latest .
+
+      # Step 5: Push the Docker image to ECR
+      - name: Push the Docker image to ECR
+        run: |
+          docker push 116981799810.dkr.ecr.us-east-1.amazonaws.com/userepo:latest
